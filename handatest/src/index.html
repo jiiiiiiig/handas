@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>다이어리MBTI</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    nav {
+      margin-bottom: 20px;
+    }
+/*
+    .jumbotron {
+      margin: 30px;
+      margin-top: 100px;
+      padding: 0px;
+    }*/
+
+    /* PC (해상도 1024px)*/
+    @media all and (min-width:1024px) {
+      .jumbotron {
+        margin: 30px;
+        margin-top: 100px;
+      }
+    }
+
+    /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+    @media all and (min-width:768px) and (max-width:1023px) {
+      .jumbotron {
+        margin: 15px;
+        margin-top: 70px;
+      }
+    }
+
+    /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+    @media all and (max-width:767px) {
+      .jumbotron {
+        margin: 5px;
+        margin-top: 70px;
+      }
+    }
+
+    #a1 {}
+
+    #a2 {}
+  </style>
+</head>
+<script>
+
+</script>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">한다</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Test</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="jumbotron">
+      <div class='text-center'>
+        <br>
+        <br>
+        <br>
+        <h4 id="t">대학생 여러분의 스타일에 맞춘 다이어리를 선택해 드릴게요.</h4>
+        <h1 id="tt">다이어리 MBTI</h1>
+        <br>
+        <h4 id="ttt" class="text-muted">두 선택지 중에서 당신의 선택을 골라주세요 !</h4>
+        <h3 id="rt"></h3>
+        <h4 id="rtt"></h4>
+      </div>
+
+      <div class="row">
+        <div class="jumbotron">
+          <div class="text-center" onclick="up();q();save(1);" style="background-color: #FFFFF0">
+            <h3 id="a1">시작하기</h3>
+          </div>
+        </div>
+
+        <div class="jumbotron">
+          <div class="text-center" onclick="up();q();save(2);" style="background-color: #FFFFF0">
+            <h3 id="a2"></h3>
+          </div>
+        </div>
+        <br><br>
+      </div>
+
+      <br>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  <script type='text/javascript'>
+    var a = 0;
+    var i;
+    var e = 0;
+    var s = 0;
+    var t = 0;
+    var j = 0;
+  </script>
+
+  <script>
+    function up() {
+      a += 1;
+    }
+
+    function q() {
+      if (a == 1) {
+        document.getElementById("t").style.display = "none";
+        document.getElementById("tt").style.display = "none";
+        document.getElementById("ttt").innerHTML = "오늘은 불금! 다들 나오라는데, 일요일까지 과제가 있다. 어떡할까?"
+        document.getElementById("a1").innerHTML = "토요일, 일요일에도 약속이 있는데. 오늘 해야지."
+        document.getElementById("a2").innerHTML = "어떻게든 되겠지! 일단 놀고 생각해."
+        document.getElementById("a1").style.display = "";
+        document.getElementById("a2").style.display = "";
+      } else if (a == 2) {
+    	document.getElementById("ttt").innerHTML = "어떤 교양을 들을까"
+        document.getElementById("a1").innerHTML = "이미 꿀교양이라고 소문난 교양을 선택하자!s"
+        document.getElementById("a2").innerHTML = "이 수업 괜찮아 보이는데? 내가 듣고 싶은 걸 들을래.n"
+      } else if (a == 3) {
+        document.getElementById("ttt").innerHTML = "동아리에 나에 대한 안좋은 소문이 돌았다."
+            document.getElementById("a1").innerHTML = "나 그런 적 없는데? 아니라고 하면 되지.t"
+            document.getElementById("a1").innerHTML = "다 내가 했다고 생각하겠지? 정말 속상해. 누가 나한테 이런 소리를.. 동아리 그만둬야하나. 자퇴할까. 아..f"
+      } else if (a == 4) {
+        document.getElementById("ttt").innerHTML = "후배가 내가 들었던 수업이 어땠냐고 물어본다."
+        document.getElementById("a1").innerHTML = "s하 그 수업 교수님이 추가 점수를 주시는데 수업시간에 발표하고 질문 많이하는 사람들을 좋아하시더라고. 그리고 기말과제도 프로젝트로 진행되는데, 개개인별로 참여점수를 매겨."
+        document.getElementById("a2").innerHTML = "n교수님이 전체적으로 수업 참여도를 중요하게 생각하시더라."
+      } else if (a == 5) {
+        document.getElementById("ttt").innerHTML = "마음에 드는 선배가 있는데. 어떻게 친해지지?"
+        document.getElementById("a1").innerHTML = "선배 교양 뭐 들어요? 오 이건 어떻게한거에요? 선배 알바경험 있어요? 오 저도 괜찮을까요?"
+        document.getElementById("a2").innerHTML = "우와 대박. 선배 멋있다~~ 아 진짜요? (웃음 웃음) "
+      } else if (a == 6) {
+          document.getElementById("ttt").innerHTML = "둘 중 한 명과 팀플을 해야한다면?"
+          document.getElementById("a1").innerHTML = "무뚝뚝하고 말걸기 어렵지만 일 시키면 누구보다 잘해오는 친구";
+          document.getElementById("a2").innerHTML = "열심히 하고 분위기를 화기애애하게 해주지만 일은 못하는 친구";
+      } else if (a == 7) {
+          document.getElementById("ttt").innerHTML = "동기들과 떠나는 여행!! 나는 어떤 스타일일까?"
+          document.getElementById("a1").innerHTML = "첫째날 6시쯤 도착할거니까 일단 고기국수를 먹고, 7시 반까지 다연호텔 도착해서 짐 풀자. 그리고 9시전까지 한다시장 가서 회 사오고... 내가 표로 정리해올게!!";
+          document.getElementById("a2").innerHTML = "도착하면 슬슬 바다나 보고.. 둘째날은 인기 카페 가보자! 저녁은 가보고 끌리는걸로 가자!";
+      } else if (a == 8) {
+          document.getElementById("ttt").innerHTML = "공강을 만들고 싶은데 친구들은 다 금공강이다. 수공강 시간표가 맘에 드는데, 혼자 들어야 해. 어떡하지?"
+          document.getElementById("a1").innerHTML = "내가 쉬고싶을 때 쉬기. 수공강 선호";
+          document.getElementById("a2").innerHTML = "남들 다 쉬는 날 쉬기. 금공강 선호";
+      } else if (a == 9) {
+          document.getElementById("ttt").innerHTML = "선배가 다음주에 술 사주시겠다고 한다."
+          document.getElementById("a1").innerHTML = "네~ 불러만 주세요 ㅎㅎ 바로 갈게요";
+          document.getElementById("a2").innerHTML = "다음주 금요일 7시쯤에 이모네 북엇국 괜찮으세요??";
+      } else if (a == 10) {
+          document.getElementById("ttt").innerHTML = "캠퍼스에서 길을 잃은 사랆이 도서관 위치를 묻는다."
+          document.getElementById("a1").innerHTML = "앞으로 쭉 가시면 큰길 나오거든요? 쭉 올라가시면 금방 나와요!";
+          document.getElementById("a2").innerHTML = "앞으로 300m쯤 가셔서 우회전하시고 100m정도 앞에보면 10시방향으로 건물 하나 나와요. 옆에 계단으로 올라가시면 돼요";
+      } else if (a == 11) {
+          document.getElementById("ttt").innerHTML = "시험을 망쳐서 우울해. 어떡하지"
+          document.getElementById("a1").innerHTML = "집에서 맛있는 배달음식 시키고 내가 젤 좋아하는 예능 보면서 깔깔 웃어야지.";
+          document.getElementById("a2").innerHTML = "친구들 다 불러!! 술마시고 파티하고 밤새 놀자~~";
+      } else if (a == 12) {
+          document.getElementById("ttt").innerHTML = "둘중에 한 모임에만 참가할 수 있다. 어느 모임으로 갈까?"
+          document.getElementById("a1").innerHTML = "친한 친구들 3명과의 저녁 약속";
+          document.getElementById("a2").innerHTML = "우리 과 사람들 60명 오는 개강파티";
+      } else {
+        window.location.href = 'http://jiiiiiiig.github.io/BalanceGame/img.html';
+      }
+    }
+
+    function save(i) {
+      console.log("순서a=%d,선택i=%d", a, i);
+      if (a == 1) {
+        console.log('J or P');
+        if (i == 1) {
+          j++;
+          console.log('J');
+        } else if (i == 2) {
+          console.log('P');
+        }
+      }
+      else if (a == 2) {
+          console.log('S or N');
+          if (i == 1) {
+            s++;
+            console.log('S');
+          } else if (i == 2) {
+            console.log('N');
+          }
+      }
+      else if (a == 3) {
+          console.log('T or F');
+          if (i == 1) {
+            t++;
+            console.log('T');
+          } else if (i == 2) {
+            console.log('F');
+          }
+      }
+      else if (a == 4) {
+          console.log('S or N');
+          if (i == 1) {
+            s++;
+            console.log('S');
+          } else if (i == 2) {
+            console.log('N');
+          }
+      }
+      else if (a == 5) {
+          console.log('T or F');
+          if (i == 1) {
+            t++;
+            console.log('T');
+          } else if (i == 2) {
+            console.log('F');
+          }
+      }
+      else if (a == 6) {
+          console.log('T or F');
+          if (i == 1) {
+            t++;
+            console.log('T');
+          } else if (i == 2) {
+            console.log('F');
+          }
+      }
+      else if (a == 7) {
+          console.log('J or P');
+          if (i == 1) {
+            j++;
+            console.log('J');
+          } else if (i == 2) {
+            console.log('P');
+          }
+      }
+      else if (a == 8) {
+          console.log('E or I');
+          if (i == 1) {
+            console.log('I');
+          } else if (i == 2) {
+            e++;
+            console.log('E');
+          }
+      }
+      else if (a == 9) {
+          console.log('J or P');
+          if (i == 1) {
+            console.log('P');
+          } else if (i == 2) {
+            j++;
+            console.log('J');
+          }
+      }
+      else if (a == 10) {
+          console.log('S or N');
+          if (i == 1) {
+            console.log('N');
+          } else if (i == 2) {
+            s++;
+            console.log('S');
+          }
+      }
+      else if (a == 11) {
+          console.log('E or I');
+          if (i == 1) {
+            console.log('I');
+          } else if (i == 2) {
+            e++;
+            console.log('E');
+          }
+      }
+      else if (a == 12) {
+          console.log('E or I');
+          if (i == 1) {
+           
+            console.log('I');
+          } else if (i == 2) {
+            e++;
+            console.log('E');
+          }
+      next();
+      }
+    }
+
+
+
+    function next() {
+      document.getElementById("rt").style.display = "";
+      document.getElementById("rtt").style.display = "";
+      document.getElementById("ttt").style.display = "none";
+      if (e>=2){
+    	  var m1 = 'E'
+      } else{
+    	  var m1 = 'I'
+      }
+      if (s>=2){
+    	  var m2 = 'S'
+      } else{
+    	  var m2 = 'N'
+      }
+      if (t>=2){
+    	  var m3 = 'T'
+      } else{
+    	  var m3 = 'F'
+      }
+      if (j>=2){
+    	  var m4 = 'J'
+      } else{
+    	  var m4 = 'P'
+      }
+      const result = m1.concat(m2,m3,m4);
+      console.log(result);
+      document,write(result);
+
+    
+      
+      /*
+      if (m == 0 && c == 0) {
+        document.getElementById("rt").innerHTML = "당신의 취향은 국산 노모 작품이군요."
+
+      } else if (m == 0 && c == 1) {
+        document.getElementById("rt").innerHTML = "당신의 취향은 해외 노모 작품이군요."
+
+      } else if (m == 1 && c == 0) {
+        document.getElementById("rt").innerHTML = "당신의 취향은 국산 유모 작품이군요."
+
+      } else if (m == 1 && c == 1) {
+        document.getElementById("rt").innerHTML = "당신의 취향은 해외 유모 작품이군요."
+      }
+      document.getElementById("rtt").innerHTML = "당신은 소위 '국산 노모'작품이라 불리는 영상들이 <br> 대부분 불법 촬영 영상물이라는 사실, 알고 계셨습니까?";
+      document.getElementById("a1").style.display = "";
+      document.getElementById("a2").style.display = "";
+      document.getElementById("a1").innerHTML = "예";
+      document.getElementById("a2").innerHTML = "아니오";
+*/
+
+    }
+  </script>
+
+
+
+
+
+  <address>
+    <div class="text-right">
+      <br>
+      <p>본 서비스의 저작권은 '다이어리 연구소-다연'에 있으며, 상업적 이용을 금합니다.</p>
+      <p>본 서비스의 공유 및 사용을 환영합니다.</p>
+    </div>
+  </address>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
